@@ -7,6 +7,10 @@ verify_ssl = true
 
 [packages]
 pyserial = "*"
+keyboard = "*"
+pygame = "*"
+numpy = "*"
+opencv-python = "*"
 
 [requires]
 python_version = "3.8"
