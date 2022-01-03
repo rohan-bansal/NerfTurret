@@ -1,7 +1,5 @@
 import numpy as np
 import serial
-import time
-import sys
 import cv2
 
 arduino = serial.Serial(port="/dev/ttyACM0", baudrate=115200)
@@ -13,6 +11,7 @@ print("Connected to arduino...")
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 print("Created classifier...")
 cap = cv2.VideoCapture(1)
+print("Opened video feed...")
 
 def set_res(cap, x,y):
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, int(x))
@@ -45,22 +44,13 @@ while(True):
     if ([i for i in faces]):                                     
         face_center_x = faces[0,0]+faces[0,2]/2
         face_center_y = faces[0,1]+faces[0,3]/2
-        # data = "X{0:.3f}Y{1:.3f}Z".format(face_center_x, face_center_x)
-        # print(data)
-        # arduino.write(data.encode())
 
         err_x = 30*(face_center_x - frame_w/2)/(frame_w/2)
         err_y = 30*(face_center_y - frame_h/2)/(frame_h/2)
         data = "{:.3f}X{:.3f}Y".format(err_x, err_y)
         print(data)
         arduino.write(bytes(data, 'utf-8'))
-        # arduino.write((str(err_x) + "x!").encode())        
-        # arduino.write((str(err_y) + "y!").encode())        
-        # print("X: ",err_x," ","Y: ",err_y)
-    else:
-        pass
-        # arduino.write("o!".encode())  
-              
+
                      
 arduino.close()
 cap.release()
