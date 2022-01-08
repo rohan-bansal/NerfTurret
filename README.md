@@ -22,3 +22,7 @@ It's 20% 3d printed material, 20% actual mechanism, and 60% hot glue.
 ## Why?
 
 Something finally cracked
+
+## Is there a video?
+
+Yes, with DiCaprio's face on a stick as the target of choice. Will upload that later
