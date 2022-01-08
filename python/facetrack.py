@@ -8,9 +8,10 @@ arduino.reset_output_buffer()
 
 print("Connected to arduino...")
 
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-print("Created classifier...")
-cap = cv2.VideoCapture(1)
+face_cascade = cv2.CascadeClassifier('classifiers/haarcascade_frontalface_alt.xml')
+
+print("Created classifiers...")
+cap = cv2.VideoCapture(0)
 print("Opened video feed...")
 
 def set_res(cap, x,y):
@@ -30,7 +31,7 @@ while(True):
     faces = np.array([]) 
     faces = face_cascade.detectMultiScale(
         gray,   
-        scaleFactor=1.3,
+        scaleFactor=1.1,
     )
     
     for (x, y, w, h) in faces:
@@ -41,15 +42,22 @@ while(True):
         break
 
 
-    if ([i for i in faces]):                                     
+    if ([i for i in faces]):
         face_center_x = faces[0,0]+faces[0,2]/2
         face_center_y = faces[0,1]+faces[0,3]/2
 
         err_x = 30*(face_center_x - frame_w/2)/(frame_w/2)
         err_y = 30*(face_center_y - frame_h/2)/(frame_h/2)
-        data = "{:.3f}X{:.3f}Y".format(err_x, err_y)
-        print(data)
-        arduino.write(bytes(data, 'utf-8'))
+        
+
+        if abs(err_x) < 3 and abs(err_y) < 3:
+            data = "1000.0X0Y".format(err_x, err_y)
+            print("shoot!")
+            arduino.write(bytes(data, 'utf-8'))
+        else:
+            data = "{:.3f}X{:.3f}Y".format(err_x, err_y)
+            print(data)
+            arduino.write(bytes(data, 'utf-8'))
 
                      
 arduino.close()
