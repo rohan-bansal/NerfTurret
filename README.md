@@ -1,5 +1,3 @@
 # Face Tracking Nerf Turret
 
-Seen one too many Michael Reeves videos 
-
-
+![don't let it see u](pics/thumb.jpg)
