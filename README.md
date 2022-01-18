@@ -2,8 +2,6 @@
 
 ![don't let it see u](pics/thumb.jpg)
 
-*the stuff nightmares are made of*
-
 
 ## What exactly is that?
 
@@ -15,14 +13,8 @@ Two servos control the turret's yaw and pitch, and one is placed at the back of 
 
 Should the victim make the critical mistake of aligning perfectly with the turret's line of sight, the Arduino will be instructed to fire the third servo at the back of the turret, launching the dart with terrific accuracy.
 
-## What's that made of?
+## What's that turret made of?
 
-It's 20% 3d printed material, 20% actual mechanism, and 60% hot glue.
+It's 40% 3d printed material and 60% hot glue.
 
-## Why?
-
-Something finally cracked
-
-## Is there a video?
-
-Yes, with DiCaprio's face on a stick as the target of choice. Will upload that later
+*just kidding. The entire turret was designed in Fusion 360 and 3d printed.*
