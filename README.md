@@ -16,5 +16,3 @@ Should the victim make the critical mistake of aligning perfectly with the turre
 ## What's it made of?
 
 It's 40% 3d printed material and 60% hot glue.
-
-*just kidding. The entire turret was designed in Fusion 360 and 3d printed.*
