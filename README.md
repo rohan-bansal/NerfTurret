@@ -13,7 +13,7 @@ Two servos control the turret's yaw and pitch, and one is placed at the back of 
 
 Should the victim make the critical mistake of aligning perfectly with the turret's line of sight, the Arduino will be instructed to fire the third servo at the back of the turret, launching the dart with terrific accuracy.
 
-## What's that turret made of?
+## What's it made of?
 
 It's 40% 3d printed material and 60% hot glue.
 
